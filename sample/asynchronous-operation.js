@@ -21,6 +21,6 @@ $.ajax('http://baidu.com', {
 });
 
 // 或者在页面加载完毕后回调
-$(function(){
+$(function () {
     // 这里也是回调函数
 });
