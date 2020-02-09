@@ -17,5 +17,7 @@ promise.then(() => {
         catch() {
             console.log('not yet');
         }
+    }).catch(value => {
+        console.log('done');
     });
 });
