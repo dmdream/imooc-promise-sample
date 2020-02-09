@@ -1,6 +1,6 @@
 // Promise.race()
 // https://www.imooc.com/video/16627
-
+const console = require('./console.js');
 
 console.log('start');
 
@@ -16,7 +16,6 @@ let p2 = new Promise(resolve => {
         resolve('I\'m P2');
     }, 2000)
 });
-Promise.race([p1, p2])
-    .then(value => {
-        console.log(value);
-    });
+Promise.race([p1, p2]).then(value => {
+    console.log(value);
+});

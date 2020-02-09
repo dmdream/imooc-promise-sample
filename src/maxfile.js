@@ -10,7 +10,7 @@ function findLargest(dir, callback) {
         let count = files.length; // [2]
         let errored = false;
         let stats = [];
-        files.forEach( file => {
+        files.forEach(file => {
             fs.stat(path.join(dir, file), (err, stat) => {
                 if (errored) return; // [1]
                 if (err) {
@@ -21,7 +21,9 @@ function findLargest(dir, callback) {
 
                 if (--count === 0) {
                     let largest = stats
-                        .filter(function (stat) { return stat.isFile(); })
+                        .filter(function (stat) {
+                            return stat.isFile();
+                        })
                         .reduce(function (prev, next) {
                             if (prev.size > next.size) return prev;
                             return next;
